@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d099cb56-46d0-49a1-b191-75ee4b787455" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="customers-detail-sapiFlow" doc:id="6633d7dc-a432-4490-addb-cc6112338954" >
+		<http:listener doc:name="/customers" doc:id="dc4536f2-a23a-42b8-bfd0-762715b0a49b" config-ref="HTTP_Listener_config" path="/customers"/>
+		<ee:transform doc:name="Transform Message" doc:id="f08cad52-a00e-468d-871a-1a0ca8d50ff4" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+[
+    {
+        "First Name": "John",
+        "Last Name": "Doe",
+        "City": "Los Angeles",
+        "State": "CA",
+        "Address": "123 Main St",
+        "Age": 34,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Jane",
+        "Last Name": "Smith",
+        "City": "New York",
+        "State": "NY",
+        "Address": "456 Oak Ave",
+        "Age": 28,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Michael",
+        "Last Name": "Johnson",
+        "City": "Chicago",
+        "State": "IL",
+        "Address": "789 Pine St",
+        "Age": 45,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Emily",
+        "Last Name": "Davis",
+        "City": "Houston",
+        "State": "TX",
+        "Address": "101 Maple Rd",
+        "Age": 32,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Robert",
+        "Last Name": "Brown",
+        "City": "Phoenix",
+        "State": "AZ",
+        "Address": "202 Elm St",
+        "Age": 50,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Sarah",
+        "Last Name": "Wilson",
+        "City": "Philadelphia",
+        "State": "PA",
+        "Address": "303 Cedar Ave",
+        "Age": 27,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "David",
+        "Last Name": "Martinez",
+        "City": "San Antonio",
+        "State": "TX",
+        "Address": "404 Spruce St",
+        "Age": 39,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Laura",
+        "Last Name": "Anderson",
+        "City": "San Diego",
+        "State": "CA",
+        "Address": "505 Birch Rd",
+        "Age": 31,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "James",
+        "Last Name": "Taylor",
+        "City": "Dallas",
+        "State": "TX",
+        "Address": "606 Fir St",
+        "Age": 42,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Lisa",
+        "Last Name": "Moore",
+        "City": "San Jose",
+        "State": "CA",
+        "Address": "707 Pine Rd",
+        "Age": 29,
+        "Gender": "Female"
+    }
+]
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Infomation Has Been Sucessfully Retrived" doc:id="b24e820a-f866-4a2d-84eb-7315c1e69f67" message='#["\n Customer Infomation Has Been Sucessfully Retrived"]'/>
+	</flow>
+</mule>

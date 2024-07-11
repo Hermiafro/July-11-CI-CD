@@ -16,6 +16,79 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output application/json
 ---
 [
+	 {
+        "First Name": "Hermi",
+        "Last Name": "Bulcha",
+        "City": "Miami",
+        "State": "FL",
+        "Address": "111 Ocean Dr",
+        "Age": 36,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Lila",
+        "Last Name": "Bulcha",
+        "City": "Atlanta",
+        "State": "GA",
+        "Address": "222 Peachtree St",
+        "Age": 29,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Betty",
+        "Last Name": "Haile",
+        "City": "Denver",
+        "State": "CO",
+        "Address": "333 Mountain Rd",
+        "Age": 43,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Nebi",
+        "Last Name": "Melaku",
+        "City": "Austin",
+        "State": "TX",
+        "Address": "444 Lakeshore Dr",
+        "Age": 34,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Tame",
+        "Last Name": "Jules",
+        "City": "Seattle",
+        "State": "WA",
+        "Address": "555 Pine St",
+        "Age": 38,
+        "Gender": "Male"
+    },
+    {
+        "First Name": "Lidu",
+        "Last Name": "Jules",
+        "City": "Portland",
+        "State": "OR",
+        "Address": "666 Rose Ave",
+        "Age": 27,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Sosi",
+        "Last Name": "Zike",
+        "City": "Las Vegas",
+        "State": "NV",
+        "Address": "777 Strip Blvd",
+        "Age": 31,
+        "Gender": "Female"
+    },
+    {
+        "First Name": "Nati",
+        "Last Name": "Zike",
+        "City": "Boston",
+        "State": "MA",
+        "Address": "888 Freedom Trl",
+        "Age": 45,
+        "Gender": "Male"
+    },
+
     {
         "First Name": "John",
         "Last Name": "Doe",
